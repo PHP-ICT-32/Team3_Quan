@@ -9,6 +9,7 @@ class Default_Controllers_Index extends Libs_Controller{
     public function index(){
         $objProduct = new Default_Models_tblProduct();
         $this->view->arrProduct = $objProduct->getAllProduct();
+        
         $this->view->render('index/index');
     }
     
@@ -17,7 +18,9 @@ class Default_Controllers_Index extends Libs_Controller{
             $id = $_REQUEST['id'];
             //Khởi tạo đối tượng Default_Models_tblProduct
             $objProduct = new Default_Models_tblProduct();
+
             $this->view->itemProduct = $objProduct->getProductById($id);
+            $this->view->itemSupplier = $objProduct->getAllSupplier();
             $this->view->render('index/detail');
         }
     }

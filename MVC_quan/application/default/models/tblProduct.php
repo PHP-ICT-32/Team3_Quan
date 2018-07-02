@@ -32,5 +32,7 @@ class Default_Models_tblProduct extends Libs_Model{
     public function addCommentByProductId($id){
         
     }
-    
+    public function getAllSupplier(){
+        return $this->model->fetchAll("SELECT * FROM suppliers");
+    }
 }
